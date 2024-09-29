@@ -11,7 +11,7 @@ def main():
     F - Convert Fahrenheit to Celsius
     Q - Quit"""
     print(MENU)
-    choice = input(">>> ").upper()  # Get the user's choice and convert it to uppercase.
+    choice = input(">>> ").upper()  # Get the user's choice and convert it to uppercase. COn
 
     while choice != "Q":  # Continue until the user chooses to quit.
         if choice == "C":

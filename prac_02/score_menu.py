@@ -51,5 +51,4 @@ def show_stars(score):
 
 
 # Run the main function
-if __name__ == '__main__':
-    main()
+ main()
