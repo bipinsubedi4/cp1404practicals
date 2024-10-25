@@ -1,29 +1,28 @@
-"""
-CP1404/CP5632 Practical
-Data file -> lists program
-"""
-
 FILENAME = "subject_data.txt"
-
 
 def main():
     data = load_data()
-    print(data)
+    display_subject_details(data)
 
 
 def load_data():
-    """Read data from file formatted like: subject,lecturer,number of students."""
+    """Read data from file formatted like: subject, lecturer, number of students."""
     input_file = open(FILENAME)
+    subjects = []  # Create an empty list to store subject details
     for line in input_file:
-        print(line)  # See what a line looks like
-        print(repr(line))  # See what a line really looks like
-        line = line.strip()  # Remove the \n
-        parts = line.split(',')  # Separate the data into its parts
-        print(parts)  # See what the parts look like (notice the integer is a string)
-        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
-        print(parts)  # See if that worked
-        print("----------")
+        line = line.strip()  # Remove the newline character
+        parts = line.split(',')  # Split the line into its components
+        parts[2] = int(parts[2])  # Convert the number of students to an integer
+        subjects.append(parts)  # Add the processed line as a list to the subjects list
+        print(subjects)
     input_file.close()
+    return subjects  # Return the nested list
+
+
+def display_subject_details(data):
+    """Display subject details in the required format."""
+    for subject in data:
+        print(f"{subject[0]} is taught by {subject[1]} and has {subject[2]} students")
 
 
 main()
