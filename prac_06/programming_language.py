@@ -9,6 +9,7 @@ about various programming languages, including their typing, reflection capabili
 and year of creation.
 """
 class ProgrammingLanguage:
+    """Represent a ProgrammingLanguage object."""
     def __init__(self, language, typing, reflection, year):
         self.language = language
         self.typing = typing
@@ -16,6 +17,7 @@ class ProgrammingLanguage:
         self.year = year
 
     def is_dynamic(self):
+        """Check if dynamic or not"""
         if self.typing == "Dynamic":
             return True
         else:
