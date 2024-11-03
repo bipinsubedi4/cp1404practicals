@@ -24,7 +24,7 @@ def main():
 
         guitar = Guitar(name, year, cost)
         guitars.append(guitar)
-        print(f"{guitar} added.\n")
+        print(f"{guitar} added.")
 
         # Prompt for the next guitar name
         name = input("Name: ")
