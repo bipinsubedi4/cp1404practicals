@@ -18,13 +18,13 @@ def main():
     # Get the first input outside the loop to start the condition
     name = input("Name: ")
 
-    while name:  # Continue as long as name is not blank
+    while name != "":  # Continue as long as name is not blank
         year = int(input("Year: "))
         cost = float(input("Cost: $"))
 
         guitar = Guitar(name, year, cost)
         guitars.append(guitar)
-        print(f"{guitar} added.")
+        print(f"{guitar} added.\n")
 
         # Prompt for the next guitar name
         name = input("Name: ")
