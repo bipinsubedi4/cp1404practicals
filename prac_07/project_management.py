@@ -67,6 +67,7 @@ def update_project(projects):
 
 
 def main():
+    """Main function for the menu"""
     projects = load_projects(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}")
 
