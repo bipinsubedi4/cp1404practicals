@@ -2,6 +2,13 @@ import datetime
 from project import Project
 
 FILENAME = "projects.txt"
+MENU = """- (L)oad projects  
+- (S)ave projects  
+- (D)isplay projects  
+- (F)ilter projects by date
+- (A)dd new project  
+- (U)pdate project
+- (Q)uit"""
 
 
 def load_projects(filename):
@@ -34,11 +41,15 @@ def display_projects(projects):
         print(f"  {project}")
 
 
+def sort_by_start_date(project):
+    return project.start_date
+
+
 def filter_projects_by_date(projects, date_str):
     filter_date = datetime.datetime.strptime(date_str, "%d/%m/%Y").date()
     filtered_projects = [project for project in projects if project.start_date >= filter_date]
     print(f"Projects starting on or after {date_str}:")
-    for project in sorted(filtered_projects, key=lambda p: p.start_date):
+    for project in sorted(filtered_projects, key=sort_by_start_date):
         print(f"  {project}")
 
 
@@ -71,15 +82,7 @@ def main():
     projects = load_projects(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}")
 
-    menu = """- (L)oad projects  
-- (S)ave projects  
-- (D)isplay projects  
-- (F)ilter projects by date
-- (A)dd new project  
-- (U)pdate project
-- (Q)uit"""
-
-    choice = input(menu + "\n>>> ").lower()
+    choice = input(MENU + "\n>>> ").lower()
     while choice != 'q':
         if choice == 'l':
             filename = input("Filename to load from: ")
@@ -100,7 +103,7 @@ def main():
             update_project(projects)
         else:
             print("Invalid choice.")
-        choice = input(menu + "\n>>> ").lower()
+        choice = input(MENU + "\n>>> ").lower()
 
     if input("Save changes before quitting? (y/n): ").lower() == 'y':
         save_projects(FILENAME, projects)
