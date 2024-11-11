@@ -5,7 +5,7 @@ FILENAME = "guitars.csv"
 
 
 def main():
-    """Main function to sort and display"""
+    """Main function to sort and display."""
     guitars = load_guitars(FILENAME)
     display_guitars(guitars)
 
@@ -40,15 +40,16 @@ def display_guitars(guitars):
 def add_new_guitars(guitars):
     """Add new guitars based on user input."""
     print("\nEnter your new guitars:")
-    while True:
-        name = input("Name: ")
-        if not name:
-            break
+    name = input("Name: ")
+    while name:
         year = int(input("Year: "))
         cost = float(input("Cost: $"))
         new_guitar = Guitar(name, year, cost)
         guitars.append(new_guitar)
         print(f"{new_guitar} added.\n")
+
+        # Prompt for the next guitar or end loop if no input is provided
+        name = input("Name: ")
 
 
 def save_guitars(filename, guitars):
