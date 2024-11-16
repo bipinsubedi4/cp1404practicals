@@ -6,6 +6,7 @@ BoxLayout:
     TextInput:
         id: input_name
         text: ''
+        on_press: app.handle_clear()
     Button:
         text: 'Greet'
         on_press: app.handle_greet()
