@@ -16,5 +16,10 @@ class BoxLayoutDemo(App):
         else:
             self.root.ids.output_label.text = "Hello!"
 
+    def handle_clear(self):
+        """Handles the Clear button click event."""
+        self.root.ids.input_name.text = ''
+        self.root.ids.output_label.text = 'Enter your name'
+
 
 BoxLayoutDemo().run()
