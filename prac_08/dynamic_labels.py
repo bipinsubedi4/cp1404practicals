@@ -4,6 +4,7 @@ from kivy.uix.label import Label
 
 
 class DynamicLabelsApp(App):
+    """Create class named DynamicLabelsApp"""
     def build(self):
         self.names = ["Alice", "Bob", "Charlie", "Diana"]  # List of names
         self.root = Builder.load_file('dynamic_labels.kv')  # Load the KV file
