@@ -1,6 +1,7 @@
 from silver_service_taxi import SilverServiceTaxi
 
 def main():
+    """Main function to get the fare"""
     # Create a SilverServiceTaxi with fanciness of 2
     taxi = SilverServiceTaxi("Hummer", 200, fanciness=2)
 
