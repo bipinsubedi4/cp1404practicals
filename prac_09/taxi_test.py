@@ -1,6 +1,7 @@
 from taxi import Taxi
 
 def main():
+    """Main function to calculate the price."""
     # Create a new taxi object
     my_taxi = Taxi("Prius 1", 100)
 
