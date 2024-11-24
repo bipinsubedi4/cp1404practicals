@@ -9,6 +9,12 @@ class Band:
         self.name = name
         self.musicians = []  # List to hold Musician objects
 
+    def __str__(self):
+        """
+        Return a string representation of the Band, showing its name and musicians.
+        """
+        return f"{self.name} ({', '.join(str(musician) for musician in self.musicians)})"
+
     def add(self, musician):
         """
         Add a Musician to the band.
@@ -27,8 +33,4 @@ class Band:
             else:
                 print(f"{musician.name} needs an instrument!")
 
-    def __str__(self):
-        """
-        Return a string representation of the Band, showing its name and musicians.
-        """
-        return f"{self.name} ({', '.join(str(musician) for musician in self.musicians)})"
+
