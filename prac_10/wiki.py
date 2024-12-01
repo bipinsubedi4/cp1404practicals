@@ -39,5 +39,11 @@ def main():
         except Exception as e:
             # Handle unexpected errors
             print(f"\nAn unexpected error occurred: {e}")
-            # Prompt user for the next input
-            user_input = input("\nEnter page title: ").strip()
+    # Prompt user for the next input
+    user_input = input("\nEnter page title: ").strip()
+
+    print("Thank you.")
+
+
+if __name__ == "__main__":
+    main()
